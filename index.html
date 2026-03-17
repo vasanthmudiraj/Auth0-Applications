@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>SPA Demo Application</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+
+  <body style="background-image: url(https://images.unsplash.com/photo-1683871268982-a19153dbb35d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGlicmFyeSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D); background-repeat: no-repeat; background-size: cover;">
+    <header class="app-header"> 
+      <div class="logo-container">
+        <img src="logo.png" class="logo"> 
+          <b><h1>VIRTUAL BOOK HAVEN</h1></b>
+        </div>
+      <nav class="main-nav">
+        <ul>
+          <li><button onclick="showSection('home')">Dashboard</button>
+          <li><button onclick="showSection('about')">About Us</button>
+          <li id="nav-profile" class="hidden"><button onclick="showSection('profile')"> User Profile</button></li>
+          <li id="nav-books" class="hidden">
+              <button onclick="accessFictionBooks()">Fiction Books</button>
+              <button onclick="showSection('study-books')">Study Books</button>
+          </li>
+          <li id="btn-login"><button>Log In</button></li>
+          <li id="btn-logout" class="hidden"><button>Log Out</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section id="home" class="content-section">
+        <h2>Welcome to our Home Page!!</h2>
+        <p>Browse and Explore a wide range of books and resources!!</p>
+      </section>
+
+      <section id="about" class="content-section hidden">
+        <h2>About!!</h2>
+        <p>This is a Digital Book Store</p>
+        <p>Discover a vast collection of digital books, making reading easy and accessible anytime, anywhere.</p>
+      </section>
+
+      <section id="profile" class="content-section hidden">
+        <h2>Profile Information</h2>
+        <p><strong>Name:</strong> <span id="user-name"></span></p>
+        <p>
+          <strong>Email:</strong> <span id="user-email"></span>
+          <button id="verify-email-btn">Verify</button>
+          <span id="email-verified-status"></span> 
+        </p>
+        <p><strong>Login Time:</strong> <span id="login-time"></span></p>
+      </section>
+
+      <section id="fiction-books" class="content-section hidden">
+        <h2>Fiction Books</h2>
+        <p><strong>Book Name: </strong>The Alchemist</p>
+        <p><strong>Author: </strong>Pailo Coelho</p>
+        <p><strong>Book Price: </strong>106/-</p>
+
+        <p>-----------------------------------------------</p>
+
+        <p><strong>Book Name: </strong>Agnes Sharp and the Trip of a Lifetime</p>
+        <p><strong>Author: </strong>Leonne Swann</p>
+        <p><strong>Book Price: </strong>200/-</p>
+
+        <p>-----------------------------------------------</p>
+
+        <p><strong>Book Name: </strong>Bluff</p>
+        <p><strong>Author: </strong>Danez Smith</p>
+        <p><strong>Book Price: </strong>240/-</p>
+
+        <p>-----------------------------------------------</p>
+
+        <p><strong>Book Name: </strong>Book of Kin</p>
+        <p><strong>Author: </strong>Darius Atefat-Peckham</p>
+        <p><strong>Book Price: </strong>300/-</p>
+
+        <p>-----------------------------------------------</p>
+
+        <p><strong>Book Name: </strong>Glorious Exploits</p>
+        <p><strong>Author: </strong>Ferdia Lennon</p>
+        <p><strong>Book Price: </strong>400/-</p>
+      </section>
+
+      <section id="study-books" class="content-section hidden">
+        <h2>Study Books</h2>
+        <p><strong>Book Name: </strong>Java Complete Reference</p>
+        <p><strong>Author: </strong>McGraw Hill Education</p>
+        <p><strong>Book Price: </strong>500/-</p>
+
+        <p>-----------------------------------------------</p>
+
+        <p><strong>Book Name: </strong>Linux Complete Reference</p>
+        <p><strong>Author: </strong>McGraw Hill Education</p>
+        <p><strong>Book Price: </strong>1000/-</p>
+
+        <p>-----------------------------------------------</p>
+
+        <p><strong>Book Name: </strong>Clean Code</p>
+        <p><strong>Author: </strong>Robert C.Martin</p>
+        <p><strong>Book Price: </strong>560/-</p>
+
+        <p>-----------------------------------------------</p>
+
+        <p><strong>Book Name: </strong>PowerShell For SysAdmins</p>
+        <p><strong>Author: </strong>Adam Bertram</p>
+        <p><strong>Book Price: </strong>600/-</p>
+
+        <p>-----------------------------------------------</p>
+
+        <p><strong>Book Name: </strong>XML: In Easy Steps</p>
+        <p><strong>Author: </strong>Mike McGrath</p>
+        <p><strong>Book Price: </strong>350/-</p>
+
+      </section>
+    </main>
+
+  </body>
+</html>
